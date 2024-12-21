@@ -7,7 +7,7 @@ part of 'song_model.dart';
 // **************************************************************************
 
 _$SongImpl _$$SongImplFromJson(Map<String, dynamic> json) => _$SongImpl(
-      songName: (json['songname'] as num?)?.toInt(),
+      songName: json['songname'] as String?,
       artist: json['artist'] as String?,
       imageUrl: json['imageurl'] as String?,
     );

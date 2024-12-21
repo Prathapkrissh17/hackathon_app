@@ -21,7 +21,7 @@ Song _$SongFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Song {
   @JsonKey(name: 'songname')
-  int? get songName => throw _privateConstructorUsedError;
+  String? get songName => throw _privateConstructorUsedError;
   @JsonKey(name: 'artist')
   String? get artist => throw _privateConstructorUsedError;
   @JsonKey(name: 'imageurl')
@@ -42,7 +42,7 @@ abstract class $SongCopyWith<$Res> {
       _$SongCopyWithImpl<$Res, Song>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'songname') int? songName,
+      {@JsonKey(name: 'songname') String? songName,
       @JsonKey(name: 'artist') String? artist,
       @JsonKey(name: 'imageurl') String? imageUrl});
 }
@@ -70,7 +70,7 @@ class _$SongCopyWithImpl<$Res, $Val extends Song>
       songName: freezed == songName
           ? _value.songName
           : songName // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       artist: freezed == artist
           ? _value.artist
           : artist // ignore: cast_nullable_to_non_nullable
@@ -91,7 +91,7 @@ abstract class _$$SongImplCopyWith<$Res> implements $SongCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'songname') int? songName,
+      {@JsonKey(name: 'songname') String? songName,
       @JsonKey(name: 'artist') String? artist,
       @JsonKey(name: 'imageurl') String? imageUrl});
 }
@@ -116,7 +116,7 @@ class __$$SongImplCopyWithImpl<$Res>
       songName: freezed == songName
           ? _value.songName
           : songName // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String?,
       artist: freezed == artist
           ? _value.artist
           : artist // ignore: cast_nullable_to_non_nullable
@@ -142,7 +142,7 @@ class _$SongImpl implements _Song {
 
   @override
   @JsonKey(name: 'songname')
-  final int? songName;
+  final String? songName;
   @override
   @JsonKey(name: 'artist')
   final String? artist;
@@ -189,7 +189,7 @@ class _$SongImpl implements _Song {
 
 abstract class _Song implements Song {
   factory _Song(
-      {@JsonKey(name: 'songname') final int? songName,
+      {@JsonKey(name: 'songname') final String? songName,
       @JsonKey(name: 'artist') final String? artist,
       @JsonKey(name: 'imageurl') final String? imageUrl}) = _$SongImpl;
 
@@ -197,7 +197,7 @@ abstract class _Song implements Song {
 
   @override
   @JsonKey(name: 'songname')
-  int? get songName;
+  String? get songName;
   @override
   @JsonKey(name: 'artist')
   String? get artist;
