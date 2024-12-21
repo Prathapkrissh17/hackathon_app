@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:hackathon_app/src/features/contribute/presentation/contribute_screen.dart';
 import 'package:hackathon_app/src/features/home/presentation/home_screen.dart';
+import 'package:hackathon_app/src/features/identify/presentation/identify_screen.dart';
+import 'package:hackathon_app/src/features/music/presentation/music_screen.dart';
+import 'package:hackathon_app/src/features/search/presentation/search_screen.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
@@ -26,16 +30,18 @@ class _BottomNavBarState extends State<BottomNavBar> {
             context, MaterialPageRoute(builder: (context) => HomeScreen()));
       case 1:
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => HomeScreen()));
+            context, MaterialPageRoute(builder: (context) => MusicScreen()));
       case 2:
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => HomeScreen()));
+            context, MaterialPageRoute(builder: (context) => ContributeScreen()));
       case 3:
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => HomeScreen()));
+            context, MaterialPageRoute(builder: (context) => IdentifyScreen()));
       case 4:
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => HomeScreen()));
+        showSearch(
+          context: context,
+          delegate: SongsCustomSearch(),
+        );
     }
   }
 
@@ -62,7 +68,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
           label: 'Contribute',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.settings),
+          icon: Icon(Icons.do_not_disturb_on_total_silence_rounded),
           label: 'Identify',
         ),
         BottomNavigationBarItem(
