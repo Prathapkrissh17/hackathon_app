@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hackathon_app/src/common/extensions/context_extension.dart';
+import 'package:hackathon_app/src/features/home/presentation/home_screen.dart';
 
 class OnBoardingPage extends StatelessWidget {
   const OnBoardingPage({super.key});
@@ -8,8 +10,19 @@ class OnBoardingPage extends StatelessWidget {
     return Scaffold(
       body: ListView(
         children: [
-          Image.asset(
-            '',
+          // Image.asset(
+          //   '',
+          // ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return const HomeScreen();
+              }));
+            },
+            child: Text(
+              'Login',
+              style: context.displaySmall,
+            ),
           ),
         ],
       ),
