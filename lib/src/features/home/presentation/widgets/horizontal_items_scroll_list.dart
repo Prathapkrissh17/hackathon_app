@@ -23,6 +23,7 @@ class _HorizontalItemsScrollListState extends State<HorizontalItemsScrollList> {
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
       sampleSongs = await loadSongs();
+      setState(() {});
     });
     super.initState();
   }
@@ -33,7 +34,7 @@ class _HorizontalItemsScrollListState extends State<HorizontalItemsScrollList> {
     final height = MediaQuery.of(context).size.height;
     return SizedBox(
       width: double.maxFinite,
-      height: height * 0.36, // Set a fixed height for the widget
+      height: height * 0.36,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -121,7 +122,10 @@ class _HorizontalItemsScrollListState extends State<HorizontalItemsScrollList> {
                               return const Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Icon(Icons.close, color: Colors.white,),
+                                  Icon(
+                                    Icons.close,
+                                    color: Colors.white,
+                                  ),
                                   gapH4,
                                   Text('Failed to load image'),
                                 ],

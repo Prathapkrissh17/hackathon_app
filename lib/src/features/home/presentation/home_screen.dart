@@ -20,7 +20,9 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
       loadedFrames = await loadFrames();
+      setState(() {});
     });
+    print(loadedFrames);
     super.initState();
   }
 
@@ -121,10 +123,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: Image.asset(
-                        width: double.infinity,
-                        height: 300,
-                        fit: BoxFit.fitWidth,
-                        'assets/images/dash.jpg'),
+                      width: double.infinity,
+                      height: 300,
+                      fit: BoxFit.fitWidth,
+                      'assets/images/dash.jpg',
+                    ),
                   ),
                 ],
               ),

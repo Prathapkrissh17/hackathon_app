@@ -26,17 +26,17 @@ class _BottomNavBarState extends State<BottomNavBar> {
     });
     switch (index) {
       case 0:
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => HomeScreen()));
+        Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) => const HomeScreen()));
       case 1:
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => MusicScreen()));
+        Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) => const MusicScreen()));
       case 2:
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => ContributeScreen()));
+        Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) => const ContributeScreen()));
       case 3:
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => IdentifyScreen()));
+        Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) => const IdentifyScreen()));
       case 4:
         showSearch(
           context: context,
