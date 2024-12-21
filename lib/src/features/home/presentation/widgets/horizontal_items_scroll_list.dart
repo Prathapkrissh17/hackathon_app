@@ -2,14 +2,30 @@ import 'package:flutter/material.dart';
 import 'package:hackathon_app/src/common/extensions/context_extension.dart';
 import 'package:hackathon_app/src/common/spacing/app_spacing.dart';
 import 'package:hackathon_app/src/features/home/data/songs_data.dart';
+import 'package:hackathon_app/src/features/home/domain/song_model.dart';
 
-class HorizontalItemsScrollList extends StatelessWidget {
+class HorizontalItemsScrollList extends StatefulWidget {
   const HorizontalItemsScrollList({
     required this.title,
     super.key,
   });
 
   final String title;
+
+  @override
+  State<HorizontalItemsScrollList> createState() =>
+      _HorizontalItemsScrollListState();
+}
+
+class _HorizontalItemsScrollListState extends State<HorizontalItemsScrollList> {
+  List<Song> sampleSongs = [];
+  @override
+  void initState() {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
+      sampleSongs = await loadSongs();
+    });
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +45,7 @@ class HorizontalItemsScrollList extends StatelessWidget {
                 children: [
                   Expanded(
                     child: Text(
-                      title,
+                      widget.title,
                       style:
                           context.headlineLarge!.copyWith(color: Colors.white),
                       maxLines: 2,
@@ -78,10 +94,13 @@ class HorizontalItemsScrollList extends StatelessWidget {
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(20),
                             ),
-                            child:
-                                Image.network(sampleSongs[index].imageUrl ?? '',
-                                    loadingBuilder:
-                                        (context, child, loadingProgress) {
+                            child: Image.network(
+                                sampleSongs[index].imageUrl ?? '',
+                                fit: BoxFit.fitWidth, loadingBuilder: (
+                              context,
+                              child,
+                              loadingProgress,
+                            ) {
                               if (loadingProgress == null) {
                                 return child;
                               }
