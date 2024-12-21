@@ -30,17 +30,19 @@ class _IdentifyScreenState extends State<IdentifyScreen> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Text("Tap to identify lyrics for songs you're listening to", style: context.titleLarge,),
-            Container(
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.deepOrange,
-              ),
-              padding: const EdgeInsets.all(10),
-              child: Image.asset(
-                'assets/images/musixmatch_icon_black.png',
-                width: 60,
-                height: 80,
-                color: Colors.white,
+            Center(
+              child: Container(
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.deepOrange,
+                ),
+                padding: const EdgeInsets.all(10),
+                child: Image.asset(
+                  'assets/images/musixmatch_icon_black.png',
+                  width: 60,
+                  height: 80,
+                  color: Colors.white,
+                ),
               ),
             ),
           ],
