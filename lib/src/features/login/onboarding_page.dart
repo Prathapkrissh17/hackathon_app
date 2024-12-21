@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hackathon_app/src/common/font_style.dart';
 import 'package:hackathon_app/src/common/hack_button.dart';
+import 'package:hackathon_app/src/features/home/presentation/home_screen.dart';
 
 class OnBoardingPage extends StatelessWidget {
   const OnBoardingPage({super.key});
@@ -59,30 +60,42 @@ class OnBoardingPage extends StatelessWidget {
                   ],
                 ),
               ),
-              const Expanded(
+              Expanded(
                 flex: 1,
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 8.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
                   child: Column(
                     children: [
                       HackButton(
-                        color: Color(0xFF333333),
+                        onTap: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return const HomeScreen();
+                          }));
+                        },
+                        color: const Color(0xFF333333),
                         horizontalSpacing: 10,
                         verticalSpacing: 10,
                         iconData: FontAwesomeIcons.google,
                         title: 'Continue with Google',
-                        key: Key('GoogleKey'),
+                        key: const Key('GoogleKey'),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 12,
                       ),
                       HackButton(
-                        color: Color(0xFF333333),
+                        onTap: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return const HomeScreen();
+                          }));
+                        },
+                        color: const Color(0xFF4A8AFF),
                         horizontalSpacing: 10,
                         verticalSpacing: 10,
                         iconData: FontAwesomeIcons.facebook,
                         title: 'Continue with Facebook',
-                        key: Key('FaceBookKey'),
+                        key: const Key('FaceBookKey'),
                       ),
                     ],
                   ),

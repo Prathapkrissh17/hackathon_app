@@ -8,7 +8,9 @@ class HackButton extends StatelessWidget {
     required this.horizontalSpacing,
     required this.iconData,
     required this.title,
+    required this.onTap,
   });
+  final Function() onTap;
 
   final String title;
   final IconData iconData;
@@ -26,11 +28,11 @@ class HackButton extends StatelessWidget {
         ),
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(
-            Radius.circular(12), // Adjust the radius for the rounded corners
+            Radius.circular(12),
           ),
         ),
       ),
-      onPressed: () {},
+      onPressed: onTap,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Row(
