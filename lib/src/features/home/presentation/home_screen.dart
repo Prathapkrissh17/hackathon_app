@@ -3,6 +3,7 @@ import 'package:hackathon_app/src/common/extensions/context_extension.dart';
 import 'package:hackathon_app/src/common/spacing/app_spacing.dart';
 import 'package:hackathon_app/src/features/home/presentation/widgets/horizontal_items_scroll_list.dart';
 import 'package:hackathon_app/src/features/navigation/presentation/navigation_page.dart';
+import 'package:hackathon_app/src/features/settings/settings_page.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -18,6 +19,25 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return SettingsPage();
+                  },
+                ),
+              );
+            },
+            icon: const Icon(
+              size: 24,
+              Icons.settings_rounded,
+              color: Colors.white,
+            ),
+          )
+        ],
         backgroundColor: Colors.black,
         title: Text(
           'Home',
@@ -70,7 +90,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   Text(
                     'The FloatingLyrics',
-                    style: context.headlineMedium!.copyWith(color: Colors.white),
+                    style:
+                        context.headlineMedium!.copyWith(color: Colors.white),
                   ),
                   gapH12,
                   Text(

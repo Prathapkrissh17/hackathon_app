@@ -9,7 +9,15 @@ class HackButton extends StatelessWidget {
     required this.iconData,
     required this.title,
     required this.onTap,
+    required this.textColor,
+    required this.textSize,
+    required this.iconColor,
   });
+
+  final Color iconColor;
+  final double textSize;
+
+  final Color textColor;
   final Function() onTap;
 
   final String title;
@@ -40,13 +48,16 @@ class HackButton extends StatelessWidget {
             const SizedBox(
               width: 10,
             ),
-            Icon(iconData, size: 22, color: Colors.white),
+            Icon(iconData, size: 22, color: iconColor),
             const Spacer(),
             Center(
                 child: Text(
               title,
               textAlign: TextAlign.center,
-              // style: ,
+              style: TextStyle(
+                color: textColor,
+                fontSize: textSize,
+              ),
             )),
             const Spacer(),
           ],
