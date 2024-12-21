@@ -100,8 +100,10 @@ class HorizontalItemsScrollList extends StatelessWidget {
                               );
                             }, errorBuilder: (context, error, stackTrace) {
                               return const Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Icon(Icons.close),
+                                  Icon(Icons.close, color: Colors.white,),
+                                  gapH4,
                                   Text('Failed to load image'),
                                 ],
                               );

@@ -18,86 +18,30 @@ class _IdentifyScreenState extends State<IdentifyScreen> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.black,
         title: Text(
-          'Home',
-          style: context.titleLarge!.copyWith(color: Colors.orange),
+          'Identify',
+          style: context.titleLarge!.copyWith(color: Colors.red),
         ),
       ),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            SizedBox(
-              width: double.maxFinite,
-              height: 260,
-              child: ListView.builder(
-                shrinkWrap: true,
-                scrollDirection: Axis.horizontal,
-                itemCount: 10,
-                itemBuilder: (context, index) {
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'For artists',
-                          style:
-                              context.titleLarge!.copyWith(color: Colors.white),
-                        ),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        Container(
-                          height: 160,
-                          width: width * 0.8,
-                          decoration: BoxDecoration(
-                              color: Colors.red,
-                              borderRadius: BorderRadius.circular(20)),
-                        ),
-                      ],
-                    ),
-                  );
-                },
+          children: [
+            Text("Tap to identify lyrics for songs you're listening to", style: context.titleLarge,),
+            Container(
+              decoration: const BoxDecoration(
+                shape: BoxShape.circle,
+                color: Colors.deepOrange,
               ),
-            ),
-            Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 16.0, vertical: 32.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'The FloatingLyrics',
-                    style: context.headlineMedium!.copyWith(color: Colors.white),
-                  ),
-                  gapH12,
-                  Text(
-                    'Get lyrics instantly on top of Youtube, Spotify, Play Music and more',
-                    style: context.titleLarge!.copyWith(color: Colors.grey),
-                  ),
-                  gapH12,
-                  Container(
-                    height: 200,
-                    decoration: BoxDecoration(
-                        color: Colors.red,
-                        borderRadius: BorderRadius.circular(20)),
-                  ),
-                ],
+              padding: const EdgeInsets.all(10),
+              child: Image.asset(
+                'assets/images/musixmatch_icon_black.png',
+                width: 60,
+                height: 80,
+                color: Colors.white,
               ),
-            ),
-            const HorizontalItemsScrollList(
-              title: 'Top 50 India',
-            ),
-            const HorizontalItemsScrollList(
-              title: 'Hot Weekly Songs',
-            ),
-            const HorizontalItemsScrollList(
-              title: 'New Albums and Singles',
-            ),
-            const HorizontalItemsScrollList(
-              title: 'Lyrics translated in more than 60 languages',
             ),
           ],
         ),
