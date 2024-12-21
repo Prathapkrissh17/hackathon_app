@@ -53,9 +53,9 @@ class AppTheme {
     labelMedium: AppTextTheme.labelMedium,
     labelSmall: AppTextTheme.labelSmall,
   ).apply(
-    bodyColor: AppColors.black,
-    displayColor: AppColors.black,
-    decorationColor: AppColors.black,
+    bodyColor: AppColors.white,
+    displayColor: AppColors.white,
+    decorationColor: AppColors.white,
   );
 
   Color get _scaffoldBackground => AppColors.surfaceLight;

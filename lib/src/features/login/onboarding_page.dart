@@ -73,11 +73,14 @@ class OnBoardingPage extends StatelessWidget {
                             return const HomeScreen();
                           }));
                         },
+                        textColor: Colors.white,
                         color: const Color(0xFF333333),
                         horizontalSpacing: 10,
                         verticalSpacing: 10,
                         iconData: FontAwesomeIcons.google,
                         title: 'Continue with Google',
+                        textSize: 16,
+                        iconColor: Colors.white,
                         key: const Key('GoogleKey'),
                       ),
                       const SizedBox(
@@ -90,13 +93,83 @@ class OnBoardingPage extends StatelessWidget {
                             return const HomeScreen();
                           }));
                         },
-                        color: const Color(0xFF4A8AFF),
+                        textSize: 16,
+                        color: const Color(0xFF1877F2),
                         horizontalSpacing: 10,
                         verticalSpacing: 10,
-                        iconData: FontAwesomeIcons.facebook,
+                        textColor: Colors.white,
+                        iconData: FontAwesomeIcons.facebookSquare,
+                        iconColor: Colors.black,
                         title: 'Continue with Facebook',
                         key: const Key('FaceBookKey'),
                       ),
+                      const SizedBox(
+                        height: 24,
+                      ),
+                      Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          const Text('or'),
+                          const SizedBox(
+                            width: 8,
+                          ),
+                          GestureDetector(
+                            onTap: () {},
+                            child: const Text(
+                              'use your email',
+                              style: TextStyle(
+                                color: Colors.white,
+                                decoration:
+                                    TextDecoration.underline, // Adds underline
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Expanded(
+                          child: Column(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Text(
+                            'Are you an artist?',
+                            style: CustomTextStyles.poppins(
+                              fontSize: 26,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 12,
+                          ),
+                          GestureDetector(
+                            onTap: () {},
+                            child: const Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Text(
+                                  'Go to Namma Flutter Page',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    decoration: TextDecoration
+                                        .underline, // Adds underline
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 8,
+                                ),
+                                Icon(
+                                  size: 16,
+                                  FontAwesomeIcons.externalLink,
+                                  color: Colors.white,
+                                )
+                              ],
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 12,
+                          ),
+                        ],
+                      )),
                     ],
                   ),
                 ),
