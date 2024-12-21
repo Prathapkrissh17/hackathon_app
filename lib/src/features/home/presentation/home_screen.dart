@@ -26,7 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return const SettingsPage();
+                    return SettingsPage();
                   },
                 ),
               );
@@ -90,7 +90,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   Text(
                     'The FloatingLyrics',
-                    style: context.headlineMedium!.copyWith(color: Colors.white),
+                    style:
+                        context.headlineMedium!.copyWith(color: Colors.white),
                   ),
                   gapH12,
                   Text(

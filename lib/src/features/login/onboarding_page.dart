@@ -68,10 +68,14 @@ class OnBoardingPage extends StatelessWidget {
                     children: [
                       HackButton(
                         onTap: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) {
-                            return const HomeScreen();
-                          }));
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return const HomeScreen();
+                              },
+                            ),
+                          );
                         },
                         textColor: Colors.white,
                         color: const Color(0xFF333333),
@@ -88,7 +92,7 @@ class OnBoardingPage extends StatelessWidget {
                       ),
                       HackButton(
                         onTap: () {
-                          Navigator.push(context,
+                          Navigator.pushReplacement(context,
                               MaterialPageRoute(builder: (context) {
                             return const HomeScreen();
                           }));

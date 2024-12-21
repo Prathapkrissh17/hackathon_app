@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hackathon_app/src/common/font_style.dart';
 
 class SettingsTile extends StatelessWidget {
@@ -11,29 +10,42 @@ class SettingsTile extends StatelessWidget {
 
   final bool showTrailingIcon;
 
+  final IconData leadingIcon;
+
+  final Color leadingIconColor;
+
+  final IconData trailingIcon;
+
+  final Color trailingIconColor;
+
   const SettingsTile({
     super.key,
     required this.title,
     required this.showLeadingIcon,
     required this.showTrailingIcon,
     required this.showTrailingButton,
+    required this.leadingIcon,
+    required this.leadingIconColor,
+    required this.trailingIcon,
+    required this.trailingIconColor,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 12),
+      padding: const EdgeInsets.symmetric(vertical: 16),
       child: Row(
         children: [
-          if (showLeadingIcon)
-            const Icon(
-              FontAwesomeIcons.spotify,
-              color: Colors.green,
+          if (showLeadingIcon) ...[
+            Icon(
+              leadingIcon,
+              color: leadingIconColor,
               size: 30,
             ),
-          const SizedBox(
-            width: 10,
-          ),
+            const SizedBox(
+              width: 10,
+            ),
+          ],
           Expanded(
             child: Text(
               title,
@@ -53,12 +65,12 @@ class SettingsTile extends StatelessWidget {
               onPressed: () {},
               child: const Text('Connect'),
             ),
-          // if (showTrailingIcon)
-          // Icon(
-          //   icons.arrow_back_rounded,
-          //   color: Colors.green,
-          //   size: 30,
-          // ),
+          if (showTrailingIcon)
+            Icon(
+              trailingIcon,
+              color: trailingIconColor,
+              size: 18,
+            ),
         ],
       ),
     );

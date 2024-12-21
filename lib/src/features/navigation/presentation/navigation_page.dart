@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hackathon_app/src/features/home/presentation/home_screen.dart';
 
 class BottomNavBar extends StatefulWidget {
@@ -47,7 +48,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
       onTap: _onItemTapped,
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
-          icon: Icon(Icons.home),
+          icon: Icon(FontAwesomeIcons.houseChimney),
           label: 'Home',
         ),
         BottomNavigationBarItem(
@@ -55,7 +56,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
           label: 'Music',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.plus_one_rounded),
+          icon: Icon(FontAwesomeIcons.plusCircle),
           label: 'Contribute',
         ),
         BottomNavigationBarItem(
@@ -63,7 +64,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
           label: 'Identify',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.notifications),
+          icon: Icon(Icons.search),
           label: 'Search',
         ),
       ],
