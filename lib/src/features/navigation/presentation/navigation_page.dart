@@ -3,6 +3,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hackathon_app/src/features/home/presentation/home_screen.dart';
 
 class BottomNavBar extends StatefulWidget {
+  const BottomNavBar({super.key});
+
   // NavigationPage({required this.child});
   @override
   _BottomNavBarState createState() => _BottomNavBarState();
