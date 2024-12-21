@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hackathon_app/src/common/extensions/context_extension.dart';
+import 'package:hackathon_app/src/features/settings/settings_page.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -15,6 +16,25 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return const SettingsPage();
+                  },
+                ),
+              );
+            },
+            icon: const Icon(
+              size: 24,
+              Icons.settings_rounded,
+              color: Colors.white,
+            ),
+          )
+        ],
         backgroundColor: Colors.black,
         title: Text(
           'Home',
