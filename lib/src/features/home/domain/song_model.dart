@@ -11,7 +11,7 @@ part 'song_model.g.dart';
 class Song with _$Song {
   /// Factory constructor for Song
   factory Song({
-    @JsonKey(name: 'songname') int? songName,
+    @JsonKey(name: 'songname') String? songName,
     @JsonKey(name: 'artist') String? artist,
     @JsonKey(name: 'imageurl') String? imageUrl,
   }) = _Song;
