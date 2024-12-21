@@ -27,12 +27,8 @@ class _IdentifyScreenState extends State<IdentifyScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Text(
-              "Tap to identify lyrics for songs you're listening to",
-              style: context.titleLarge,
-            ),
+            Text("Tap to identify lyrics for songs you're listening to", style: context.titleLarge,),
             Center(
-              heightFactor: 5,
               child: Container(
                 decoration: const BoxDecoration(
                   shape: BoxShape.circle,
